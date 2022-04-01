@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <h1>삼각형 판별</h1>
+    <h2></h2>
+    <canvas id="canvas" width="200" height="200"></canvas>
+    <script>
+      const h2 = document.querySelector("h2");
+
+      window.onload = function draw() {
+        const canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+          const ctx = canvas.getContext("2d");
+          ctx.beginPath();
+          ctx.moveTo(13, 10);
+          ctx.lineTo(35, 50);
+          ctx.lineTo(17, 50);
+          ctx.fill();
+        }
+      };
+
+      function solution(a, b, c) {
+        let answer = "YES",
+          max;
+        let sum = a + b + c;
+
+        if (a > b) max = a;
+        else max = b;
+        if (c > max) max = c;
+        if (sum - max <= max) answer = "NO";
+        return answer;
+      }
+      /*
+        if (a > b) {
+          max = a;
+          hap = b + c;
+        } else {
+          max = b;
+          hap = a + c;
+        }
+        if (c > max) {
+          max = c;
+          hap = a + b;
+        }
+        if (max > hap) answer = "NO";
+        else answer = "YES";
+        return answer;
+      */
+
+      let answer_out = solution(13, 35, 17);
+      h2.innerText = answer_out;
+      console.log(solution(13, 35, 17));
+    </script>
+  </body>
+</html>

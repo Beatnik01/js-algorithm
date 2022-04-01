@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <div>
+      <h1>최솟값</h1>
+      <h2></h2>
+    </div>
+    <script>
+      let h2 = document.querySelector("h2");
+
+      function solution(a, b, c) {
+        let answer;
+        if (a < b) answer = a;
+        else answer = b;
+        if (c < answer) answer = c;
+        /*
+        if (a < b && a < c) {
+          answer = a;
+        } else if (b < a && b < c) {
+          answer = b;
+        } else if (c < a && c < b) {
+          answer = c;
+        }
+        */
+        return answer;
+      }
+
+      let answer_out = solution(2, 5, 1);
+      h2.innerText = answer_out;
+      console.log(solution(2, 5, 1));
+    </script>
+  </body>
+</html>

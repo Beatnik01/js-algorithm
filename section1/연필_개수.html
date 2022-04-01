@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <h1>연필_개수</h1>
+    <h2></h2>
+    <script>
+      h2 = document.querySelector("h2");
+      function solution(n) {
+        let answer;
+        //Math.ceil = 올림
+        answer = Math.ceil(n / 12);
+        return answer;
+      }
+      let answer_out = solution(178);
+      h2.innerText = answer_out;
+      console.log(solution(178));
+    </script>
+  </body>
+</html>
