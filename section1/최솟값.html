@@ -16,6 +16,12 @@
           }
         }
         answer = min;
+        // answer = Math.min(...arr);
+        // min(arr)로 할 경우 NaN 오류 발생
+        // min(...arr)에서 ...는 전개 연산자로 배열을 펼쳐줘서 arr[0], arr[1]... 하나씩 사용
+        // ---------------------
+        // answer = Math.min.apply(null, arr);
+        // apply 첫번째 인자는 객체, 두번째 인자는 배열을 넘겨서 하나씩 사용
         return answer;
       }
 
