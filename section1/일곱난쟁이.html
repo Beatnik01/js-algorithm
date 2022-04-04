@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = arr;
+        let sum = arr.reduce((a, b) => a + b, 0);
+        // reduce / a += b, b = a + b, a = 0(a의 초기값, 처음에만 쓰이고 변하지 않음) /
+        for (let i = 0; i < arr.length - 1; i++) {
+          for (let j = i + 1; j < arr.length; j++) {
+            if (sum - (arr[i] + arr[j]) === 100) {
+              // sum(140)에서 arr[i], arr[j]를 뺐을때 100이 나온다면
+              // spilce로 arr[i]와 arr[j]를 제거함, j-1을 하는 이유는 i가 지워지면서 배열이 땡겨지기 때문
+              arr.splice(i, 1);
+              arr.splice(j - 1, 1);
+            }
+          }
+        }
+        return answer;
+      }
+
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

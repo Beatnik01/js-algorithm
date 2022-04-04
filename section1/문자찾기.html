@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = 0;
+        for (let i of s) {
+          if (i === t) {
+            answer += 1;
+            // answer++
+          }
+        }
+        return answer;
+      }
+      /*
+        let answer = s.split(t).length
+        return answer - 1;
+
+        r을 기준으로 split하면 4개로 구분됨
+        length하면 4로 나오니 마지막 return에서 -1
+
+        만약 R이 맨 뒤에 있으면 어떻게 될까?
+        3개로 구분되니 -1 하면 안되는거 아닐까?
+        -> 그럴 경우 마지막 뒤에 빈 공백이 추가되니 괜찮음 
+      */
+
+      let str = "COMPUTERPROGRAMMING";
+      console.log(solution(str, "R"));
+    </script>
+  </body>
+</html>

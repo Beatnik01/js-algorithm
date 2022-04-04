@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        if (s === s.toUpperCase()) {
+          for (let i = 0; i < s.length; i++) {
+            if (s.substring(i, i + 1) == "A") {
+              answer += "#";
+            } else {
+              answer += s.substring(i, i + 1);
+            }
+          }
+        }
+
+        return answer;
+      }
+      // 1. for of가 되는 줄 몰랐음 2. replace 알고 있었는데 생각못함
+      /*
+        for(let i of s){
+          if(i=="A") answer += "#";
+          else answer += i;
+        }
+        ----------------------------
+        answer = answer.replace(/A/g, "#");
+        * g = global 전역
+      */
+      let str = "BANANA";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
