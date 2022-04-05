@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = [];
+        for (let i of s) {
+          if (answer.indexOf(i) === -1) {
+            answer.push(i);
+          }
+        }
+        /*
+            answer = s.filter(function(v, i){
+                if(s.indexOf(v) === i) return true; // true인 요소만 반환
+                or
+                return s.indexOf(v) === i; // 해당 조건이 true일때만 반환
+            });
+        */
+        return answer;
+      }
+      let str = ["good", "time", "good", "time", "student"];
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

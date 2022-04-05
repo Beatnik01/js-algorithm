@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+
+        for (let i of s) {
+          answer += i.toUpperCase();
+        }
+
+        return answer;
+      }
+      /*
+        if(i === i.toLowerCase()) {
+            answer += i.toUpperCaser();
+        } else {
+            answer += i;
+        }
+      */
+      /*
+        num = i.charCodeAt();
+        if (num >= 97 && num <= 122) {
+            answer += i.toUpperCase();
+            or
+            answer += string.fromCharCode(num-32);
+            // ascii code를 문자로 변경
+        } else {
+            answer += i;
+        }
+     */
+
+      let str = "ItisTimeToStudy";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

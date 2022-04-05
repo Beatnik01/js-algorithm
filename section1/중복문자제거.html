@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "";
+        for (let i of s) {
+          if (answer.indexOf(i) === -1) {
+            answer += i;
+          }
+        }
+        /*
+            for(let i=0; i<s.length; i++) {
+                if(s.indexOf(s[i])===i) answer += s[i]);
+                
+                ----
+                k=0
+                s=1
+                e=2
+                k=0
+                k=0
+                s=1
+                e=2
+                t=7
+                ----
+                
+                
+            }
+        */
+        /*
+            소문자 갯수 찾기
+            let pos = s.indexOf("k");
+            while(pos !== -1){
+                answer++;
+                pos=s.indexOf("k", pos+1)
+                // 찾았으면 색인 + 1해서 다시 재검색
+            }
+       */
+        return answer;
+      }
+      console.log(solution("ksekkset"));
+    </script>
+  </body>
+</html>
