@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let answer = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > arr[i + 1]) {
+            answer.push(arr[i]);
+          } else if (arr[i] > arr[i - 1]) {
+            answer.push(arr[i]);
+          }
+        }
+        return answer;
+      }
+
+      /*
+        answer.push(arr[0]) // 첫번째는 무조건 답이니까
+        for (let i=1; i<arr.length; i++) { // 0은 push 했으니 1부터 시작
+            if(arr[i] > arr[i-1]) {
+                answer.push(arr[i]);
+            }
+        }
+      */
+
+      let arr = [7, 3, 9, 5, 6, 12];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
