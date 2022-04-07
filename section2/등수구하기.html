@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        let n = arr.length;
+        let answer = Array.from({ length: n }, () => 1); // 배열에 있는 요소들을 다 1로 초기화
+        for (let i = 0; i < n; i++) {
+          for (let j = 0; j < n; j++) {
+            if (arr[j] > arr[i]) {
+              answer[i]++;
+            }
+          }
+        }
+        return answer;
+      }
+      // 문제점
+      // 지금 배열대로 했을 때 2, 4, 5, 1, 1, 1, 1, 3이 아니라
+      // 5, 7, 8, 1, 1, 1, 1, 6이 나옴 이걸 해결하려면 hash, map을 사용해야 함
+
+      let arr = [87, 74, 32, 100, 100, 100, 100, 76];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
