@@ -8,17 +8,33 @@
       function solution(arr) {
         let answer = 0;
         let n = arr.length;
+        let dx = [-1, 1, 0, 0];
+        let dy = [0, 0, -1, 1];
+        // 상(-1,0), 하(1,0), 좌(0,-1), 우(0,1)
 
-        for (let i = 1; i < n; i++) {
-          for (let j = 1; j < n; j++) {
-            if (arr[i][j] > arr[i - 1][j]) {
-              console.log(arr[i][j], arr[i - 1][j]);
+        // i 행 / j 열
+        for (let i = 0; i < n; i++) {
+          for (let j = 0; j < n; j++) {
+            let flag = 1;
+            for (let k = 0; k < dx.length; k++) {
+              let nx = i + dx[k]; // 행 좌표
+              let ny = j + dy[k]; // 열 좌표
+              if (
+                nx >= 0 && // 가장자리에 있는 값들은 out of range 에러가 생기니 이렇게 조건을 넣어줘야함
+                nx < n &&
+                ny >= 0 &&
+                ny < n &&
+                arr[nx][ny] >= arr[i][j]
+              ) {
+                flag = 0;
+                break;
+                // 상, 하, 좌, 우 모두 탐색 했을때 나보다 크거나 같은 값이 있다면 봉우리가 아니므로 flag를 0으로
+              }
             }
+            if (flag) answer++;
           }
         }
 
-        // 5 [0][1], [1][0(i-1)], [1][2(i+1)], [2][1]
-        console.log(console.log(arr[1][1]));
         return answer;
       }
       let arr = [
