@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        let answer = [];
+        let p = 0;
+
+        for (let i of s) {
+          if (i !== t) {
+            p++;
+          } else if (i === t) {
+            p = 0;
+          }
+          answer.push(p);
+        }
+        // 오른쪽에서 계산
+
+        p = 0;
+        // 왼쪽 계산 전 0으로 초기화
+
+        for (let j = answer.length; j > 0; j--) {
+          if (answer[j] !== 0) {
+            p++;
+          } else if (answer[j] === 0) {
+            p = 0;
+          }
+
+          if (answer[j] > p) {
+            answer[j] = p;
+          }
+          /*
+           answer[i] = Math.min(answer[j], p);
+           // Math.min 함수를 사용해서 answer[j], p 둘 중 작은 값을 answer에 넣음
+          */
+        }
+        // 왼쪽에서 계산, 조건문 하나 더 추가해서 현재 배열에 있는 값이 p 보다 큰 경우에만 교체
+
+        return answer;
+      }
+
+      let str = "teachermode";
+      console.log(solution(str, "e"));
+    </script>
+  </body>
+</html>

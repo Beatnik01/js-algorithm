@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer = 0,
+          max = Number.MIN_SAFE_INTEGER;
+
+        // 자릿수 합계
+        for (let i of arr) {
+          /*
+            for (let i of arr) {
+                let sum = i.toString().split("").reduce(a, b) => a+Number(b), 0);
+            }
+          */
+          let sum = 0,
+            tmp = i;
+          while (tmp) {
+            sum += tmp % 10;
+            tmp = Math.floor(tmp / 10);
+          }
+
+          // 자릿수 합계 최대값
+          if (sum > max) {
+            max = sum;
+            answer = i;
+            // max 값이 같을 경우 어느 값이 더 큰지 비교
+          } else if (sum === max) {
+            if (i > answer) {
+              answer = i;
+            }
+          }
+        }
+
+        return answer;
+      }
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html>
